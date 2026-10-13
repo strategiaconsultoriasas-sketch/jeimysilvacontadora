@@ -1,7 +1,7 @@
 ---
 import { whatsappLink } from '../lib/site';
 ---
-<section id="sobre-jeimy" class="relative overflow-hidden py-24 md:py-32 bg-ink-950 text-paper-100">
+<section id="sobre-jeimy" class="relative overflow-hidden py-14 md:py-20 bg-ink-950 text-paper-100">
   <!-- decoracion -->
   <div class="pointer-events-none absolute inset-0 -z-10 opacity-40 bg-grain mix-blend-overlay"></div>
   <div class="pointer-events-none absolute -top-32 left-1/3 h-80 w-80 rounded-full bg-gold-500/10 blur-3xl"></div>
@@ -84,12 +84,11 @@ import { whatsappLink } from '../lib/site';
         </div>
 
         <!-- grid credenciales -->
-        <dl class="mt-10 grid grid-cols-2 gap-5 md:grid-cols-4">
+        <dl class="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-3">
           {[
             ['Experiencia', '+10 años'],
-            ['Tarjeta Profesional', '264278-T JCC'],
-            ['Especialización', 'Revisoría Fiscal'],
-            ['Especialización', 'Auditoría Forense'],
+            ['Especialización', 'Revisoría Fiscal · Auditoría Forense'],
+            ['Enfoque', 'Gerencia Financiera'],
           ].map(([k, v]) => (
             <div class="rounded-xl border border-paper-50/10 bg-paper-50/[0.04] p-4">
               <dt class="text-[10px] font-semibold uppercase tracking-[0.22em] text-gold-400">{k}</dt>
