@@ -1,0 +1,112 @@
+---
+import { whatsappLink } from '../lib/site';
+---
+<section id="sobre-jeimy" class="relative overflow-hidden py-24 md:py-32 bg-ink-950 text-paper-100">
+  <!-- decoracion -->
+  <div class="pointer-events-none absolute inset-0 -z-10 opacity-40 bg-grain mix-blend-overlay"></div>
+  <div class="pointer-events-none absolute -top-32 left-1/3 h-80 w-80 rounded-full bg-gold-500/10 blur-3xl"></div>
+
+  <div class="container-x">
+    <div class="grid gap-16 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+      <!-- Foto escritorio -->
+      <div class="relative reveal">
+        <div class="relative overflow-hidden rounded-[2rem]">
+          <img
+            src="/images/jeimy-desk.webp"
+            alt="Jeimy Silva en su escritorio"
+            width="1024"
+            height="768"
+            loading="lazy"
+            class="aspect-[4/5] md:aspect-[4/5] w-full object-cover"
+          />
+          <div class="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-ink-950/40"></div>
+        </div>
+
+        <!-- tarjeta credencial -->
+        <div class="absolute -bottom-6 -right-4 md:-right-10 w-[260px] rounded-2xl bg-paper-50 p-5 text-ink-950 shadow-soft">
+          <div class="flex items-center gap-3">
+            <div class="inline-flex h-11 w-11 items-center justify-center rounded-full bg-ink-950 text-gold-400 font-serif">
+              JS
+            </div>
+            <div class="leading-tight">
+              <p class="font-serif text-base">Jeimy Marisela Silva M.</p>
+              <p class="text-[10px] uppercase tracking-[0.22em] text-gold-600">Contadora Pública</p>
+            </div>
+          </div>
+          <div class="mt-4 flex items-center justify-between border-t border-ink-900/10 pt-3 text-[11px]">
+            <div>
+              <p class="uppercase tracking-widest text-ink-800/60">T.P.</p>
+              <p class="font-mono text-ink-950">264278-T</p>
+            </div>
+            <div>
+              <p class="uppercase tracking-widest text-ink-800/60">Órgano</p>
+              <p class="font-serif text-ink-950">JCC</p>
+            </div>
+            <div>
+              <p class="uppercase tracking-widest text-ink-800/60">Vigente</p>
+              <p class="inline-flex items-center gap-1 font-serif text-ink-950">
+                <span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>Sí
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Texto -->
+      <div class="reveal">
+        <span class="eyebrow !text-gold-400">Sobre Jeimy</span>
+        <h2 class="mt-5 h-section text-paper-50">
+          Más de una década
+          <span class="italic text-gold-400">cuidando</span>
+          lo que importa en las finanzas de cada cliente.
+        </h2>
+
+        <div class="mt-7 space-y-5 text-lg leading-relaxed text-paper-200/90">
+          <p>
+            Soy <strong class="text-paper-50">Jeimy Marisela Silva Molano</strong>,
+            contadora pública con <strong class="text-paper-50">más de 10 años</strong>
+            acompañando a empresas, personas de alto patrimonio e independientes
+            en el control, la estrategia y el cumplimiento de sus finanzas.
+          </p>
+          <p>
+            Soy especialista en <strong class="text-gold-400">revisoría fiscal y auditoría forense</strong>
+            y en <strong class="text-gold-400">gerencia financiera</strong>. Esa combinación me permite
+            no solo revisar y certificar: también detectar, prevenir e investigar irregularidades
+            — y, al mismo tiempo, mirar los números con ojos de gerente para que las decisiones
+            del día a día se tomen con información real.
+          </p>
+          <p>
+            Mi enfoque une el rigor técnico de las NIIF y la normativa tributaria colombiana
+            con una visión práctica orientada a la rentabilidad y la sostenibilidad del negocio.
+            Atiendo clientes en <strong class="text-paper-50">Boyacá, Casanare y Cundinamarca</strong>,
+            con cobertura virtual para el resto del país.
+          </p>
+        </div>
+
+        <!-- grid credenciales -->
+        <dl class="mt-10 grid grid-cols-2 gap-5 md:grid-cols-4">
+          {[
+            ['Experiencia', '+10 años'],
+            ['Tarjeta Profesional', '264278-T JCC'],
+            ['Especialización', 'Revisoría Fiscal'],
+            ['Especialización', 'Auditoría Forense'],
+          ].map(([k, v]) => (
+            <div class="rounded-xl border border-paper-50/10 bg-paper-50/[0.04] p-4">
+              <dt class="text-[10px] font-semibold uppercase tracking-[0.22em] text-gold-400">{k}</dt>
+              <dd class="mt-1.5 font-serif text-base text-paper-50 leading-tight">{v}</dd>
+            </div>
+          ))}
+        </dl>
+
+        <div class="mt-9 flex flex-wrap gap-3">
+          <a href={whatsappLink('Hola Jeimy, me gustaría conocerte y conversar sobre mi caso.')} target="_blank" rel="noopener" class="btn-gold">
+            Conversemos
+          </a>
+          <a href="#clientes" class="btn-ghost border-paper-50/20 text-paper-100 hover:bg-paper-50/5">
+            Ver clientes y testimonios
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,98 @@
+---
+import { site, whatsappLink } from '../lib/site';
+---
+<section id="contacto" class="relative overflow-hidden py-24 md:py-32 bg-ink-950 text-paper-100">
+  <div class="pointer-events-none absolute inset-0 -z-10 opacity-30 bg-grain mix-blend-overlay"></div>
+  <div class="pointer-events-none absolute top-20 right-10 h-64 w-64 rounded-full bg-gold-500/10 blur-3xl"></div>
+
+  <div class="container-x">
+    <div class="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+      <div class="reveal">
+        <span class="eyebrow !text-gold-400">Contacto</span>
+        <h2 class="mt-5 h-section text-paper-50">
+          Agendemos una conversación
+          <span class="italic text-gold-400">sin compromiso</span>
+        </h2>
+        <p class="mt-5 max-w-xl text-paper-200/85">
+          Cuénteme su caso en 10 minutos. Le respondo con un diagnóstico honesto:
+          qué está bien, qué revisar y cuál sería el siguiente paso — con o sin
+          mi acompañamiento.
+        </p>
+
+        <ul class="mt-10 space-y-5">
+          <li class="flex items-start gap-4">
+            <span class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-gold-500/15 text-gold-300 ring-1 ring-gold-500/30">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M20.52 3.48A11.9 11.9 0 0 0 12.04 0C5.46 0 .09 5.37.09 11.96c0 2.11.55 4.17 1.6 5.98L0 24l6.21-1.63a11.9 11.9 0 0 0 5.83 1.49h.01c6.58 0 11.95-5.37 11.95-11.96 0-3.19-1.24-6.19-3.48-8.42z"/></svg>
+            </span>
+            <div>
+              <p class="text-[11px] font-semibold uppercase tracking-[0.22em] text-gold-400">WhatsApp</p>
+              <a href={whatsappLink()} target="_blank" rel="noopener" class="mt-1 block font-serif text-xl text-paper-50 hover:text-gold-300">{site.phoneDisplay}</a>
+              <p class="mt-0.5 text-xs text-paper-200/70">Respuesta en horario laboral</p>
+            </div>
+          </li>
+          <li class="flex items-start gap-4">
+            <span class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-gold-500/15 text-gold-300 ring-1 ring-gold-500/30">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 7 9-7"/></svg>
+            </span>
+            <div>
+              <p class="text-[11px] font-semibold uppercase tracking-[0.22em] text-gold-400">Correo</p>
+              <a href={`mailto:${site.email}`} class="mt-1 block font-serif text-xl text-paper-50 hover:text-gold-300 break-all">{site.email}</a>
+            </div>
+          </li>
+          <li class="flex items-start gap-4">
+            <span class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-gold-500/15 text-gold-300 ring-1 ring-gold-500/30">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.3 7 13 7 13s7-7.7 7-13a7 7 0 0 0-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+            </span>
+            <div>
+              <p class="text-[11px] font-semibold uppercase tracking-[0.22em] text-gold-400">Cobertura</p>
+              <p class="mt-1 font-serif text-xl text-paper-50">Boyacá · Casanare · Cundinamarca</p>
+              <p class="mt-0.5 text-xs text-paper-200/70">Virtual: resto del país</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Tarjeta visual CTA -->
+      <div class="reveal">
+        <div class="relative overflow-hidden rounded-[2rem] border border-paper-50/10 bg-gradient-to-br from-paper-50/[0.03] to-transparent p-8 shadow-soft">
+          <div class="absolute -right-20 -top-20 h-56 w-56 rounded-full bg-gold-500/15 blur-3xl"></div>
+          <p class="eyebrow !text-gold-400">Primer contacto</p>
+          <h3 class="mt-4 font-serif text-3xl text-paper-50">
+            La vía más rápida es
+            <span class="italic text-gold-300">WhatsApp</span>.
+          </h3>
+          <p class="mt-4 text-paper-200/80 text-sm">
+            Haga clic abajo y le respondo con un mensaje que incluye los documentos
+            iniciales que necesitamos para el diagnóstico.
+          </p>
+
+          <a href={whatsappLink()} target="_blank" rel="noopener" class="btn-gold mt-7 w-full text-base">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M20.52 3.48A11.9 11.9 0 0 0 12.04 0C5.46 0 .09 5.37.09 11.96c0 2.11.55 4.17 1.6 5.98L0 24l6.21-1.63a11.9 11.9 0 0 0 5.83 1.49h.01c6.58 0 11.95-5.37 11.95-11.96 0-3.19-1.24-6.19-3.48-8.42z"/></svg>
+            Escribir ahora a {site.phoneDisplay}
+          </a>
+
+          <div class="mt-6 flex items-center gap-3 text-xs text-paper-200/70">
+            <span class="inline-block h-1.5 w-1.5 animate-shimmer rounded-full bg-emerald-400"></span>
+            Diagnóstico inicial sin costo
+          </div>
+
+          <!-- credencial debajo -->
+          <div class="mt-8 flex items-center justify-between border-t border-paper-50/10 pt-5 text-[11px] text-paper-200/70">
+            <div>
+              <p class="uppercase tracking-widest text-gold-400">T.P.</p>
+              <p class="font-mono text-paper-50">264278-T · JCC</p>
+            </div>
+            <div>
+              <p class="uppercase tracking-widest text-gold-400">Experiencia</p>
+              <p class="text-paper-50">+10 años</p>
+            </div>
+            <div>
+              <p class="uppercase tracking-widest text-gold-400">Secreto profesional</p>
+              <p class="text-paper-50">Garantizado</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

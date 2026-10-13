@@ -1,0 +1,178 @@
+---
+import { whatsappLink } from '../lib/site';
+
+const lineas = [
+  {
+    n: '01',
+    title: 'Contabilidad y ciclo contable integral',
+    kicker: 'Base operativa mensual',
+    items: [
+      'Contabilidad mensual y teneduría de libros bajo NIIF',
+      'Estados financieros certificados y cierres mensuales/anuales',
+      'Conciliaciones bancarias y de cuentas',
+      'Nómina, seguridad social y liquidación de prestaciones',
+      'Facturación electrónica y cumplimiento DIAN',
+      'Saneamiento y depuración contable de empresas con atrasos',
+      'Preparación de información exógena',
+    ],
+    icon: 'book',
+  },
+  {
+    n: '02',
+    title: 'Tributaria y planeación fiscal',
+    kicker: 'Impuestos legales, bajos y a tiempo',
+    items: [
+      'Declaraciones de renta, IVA, retefuente, ICA y otras',
+      'Planeación tributaria corporativa y para personas naturales',
+      'Declaración de activos en el exterior / patrimonio',
+      'Respuesta a requerimientos y acompañamiento DIAN',
+      'Actualización ante reformas tributarias',
+    ],
+    icon: 'scale',
+  },
+  {
+    n: '03',
+    title: 'NIIF · Normas Internacionales de Información Financiera',
+    kicker: 'Convergencia e implementación',
+    items: [
+      'Implementación de NIIF plenas y NIIF para pymes',
+      'Elaboración de políticas contables',
+      'Conversión de estados financieros a NIIF',
+      'Diagnóstico de cumplimiento NIIF',
+      'Capacitación a equipos internos',
+    ],
+    icon: 'globe',
+  },
+  {
+    n: '04',
+    title: 'Aseguramiento: revisoría fiscal y auditoría forense',
+    kicker: 'Línea insignia · Confianza y control',
+    premium: true,
+    items: [
+      'Revisoría fiscal (obligatoria o voluntaria)',
+      'Dictámenes e informes a asamblea / junta directiva',
+      'Auditoría financiera, de control interno y tributaria preventiva',
+      'Due diligence contable y financiero',
+      'Investigación de fraude y desfalcos',
+      'Peritaje contable para procesos judiciales',
+      'Cuantificación de perjuicios económicos',
+      'Apoyo en litigios y disputas societarias',
+    ],
+    icon: 'shield',
+  },
+  {
+    n: '05',
+    title: 'Gerencia financiera y asesoría estratégica',
+    kicker: 'CFO por horas · Decisiones con datos',
+    items: [
+      'Diagnóstico financiero e indicadores clave',
+      'Dirección financiera externa / CFO por horas',
+      'Presupuestos, flujo de caja y proyecciones',
+      'Evaluación financiera de proyectos e inversiones',
+      'Valoración de empresas',
+      'Tableros de control e indicadores de gestión',
+    ],
+    icon: 'chart',
+  },
+  {
+    n: '06',
+    title: 'Saneamiento financiero y perfil crediticio',
+    kicker: 'Orden patrimonial · Acceso a crédito',
+    items: [
+      'Diagnóstico y optimización del perfil crediticio (Ley 1266 de 2012)',
+      'Renegociación de pasivos para liberar flujo de caja',
+      'Estructuración financiera para acceso a crédito',
+      'Educación y salud financiera',
+    ],
+    icon: 'spark',
+  },
+];
+
+const iconFor = (name: string) => {
+  switch (name) {
+    case 'book':
+      return '<path d="M4 5a2 2 0 0 1 2-2h12v16H6a2 2 0 0 0-2 2V5z"/><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H18"/>';
+    case 'scale':
+      return '<path d="M12 3v18"/><path d="M5 7h14"/><path d="M8 7l-3 7a3 3 0 0 0 6 0z"/><path d="M16 7l-3 7a3 3 0 0 0 6 0z"/>';
+    case 'globe':
+      return '<circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/>';
+    case 'shield':
+      return '<path d="M12 3l8 3v5c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6l8-3z"/><path d="M9 12l2 2 4-4"/>';
+    case 'chart':
+      return '<path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/>';
+    case 'spark':
+      return '<path d="M12 2v4M12 18v4M4 12H2M22 12h-2M5 5l2.5 2.5M16.5 16.5L19 19M5 19l2.5-2.5M16.5 7.5L19 5"/><circle cx="12" cy="12" r="3"/>';
+    default:
+      return '<circle cx="12" cy="12" r="9"/>';
+  }
+};
+---
+<section id="servicios" class="relative overflow-hidden py-24 md:py-32">
+  <div class="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-white via-paper-50 to-white"></div>
+
+  <div class="container-x">
+    <div class="mx-auto max-w-3xl text-center reveal">
+      <span class="eyebrow mx-auto justify-center">Servicios</span>
+      <h2 class="mt-5 h-section text-ink-950">
+        Seis líneas de servicio para
+        <span class="italic text-gold-600">proteger y hacer crecer</span>
+        su patrimonio
+      </h2>
+      <p class="mt-5 text-ink-800/80 max-w-2xl mx-auto">
+        Del registro diario a la revisoría fiscal, pasando por planeación tributaria y auditoría
+        forense. Cada línea responde a un dolor concreto: cumplimiento, control, estrategia o acceso a crédito.
+      </p>
+    </div>
+
+    <div class="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {lineas.map((l) => (
+        <article class={`reveal ${l.premium ? 'card-dark lg:col-span-2' : 'card'} group`}>
+          <div class="flex items-start justify-between gap-4">
+            <div class={`inline-flex h-12 w-12 items-center justify-center rounded-xl ${l.premium ? 'bg-gold-500/15 text-gold-300 ring-1 ring-gold-500/30' : 'bg-paper-100 text-ink-900'}`}>
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" set:html={iconFor(l.icon)} />
+            </div>
+            <span class={`font-serif text-sm ${l.premium ? 'text-gold-400' : 'text-gold-600'}`}>{l.n}</span>
+          </div>
+
+          <h3 class={`mt-6 font-serif text-xl leading-tight ${l.premium ? 'text-paper-50' : 'text-ink-950'}`}>
+            {l.title}
+          </h3>
+          <p class={`mt-2 text-[11px] font-semibold uppercase tracking-[0.18em] ${l.premium ? 'text-gold-300' : 'text-gold-600'}`}>
+            {l.kicker}
+          </p>
+
+          <ul class={`mt-5 space-y-2 text-sm ${l.premium ? 'text-paper-200' : 'text-ink-800/85'}`}>
+            {l.items.map((it) => (
+              <li class="flex items-start gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" class={`mt-1 shrink-0 ${l.premium ? 'text-gold-400' : 'text-gold-600'}`}><polyline points="20 6 9 17 4 12"/></svg>
+                <span>{it}</span>
+              </li>
+            ))}
+          </ul>
+
+          {l.premium && (
+            <>
+              <span class="gold-rule mt-6"></span>
+              <p class="mt-4 text-sm italic text-paper-200/90">
+                Combinamos control independiente con capacidad de detectar, prevenir e investigar irregularidades.
+                La capa de valor más alta de un contador público.
+              </p>
+            </>
+          )}
+
+          {/* adorno hover */}
+          {!l.premium && (
+            <div class="pointer-events-none absolute inset-x-0 bottom-0 h-0.5 origin-left scale-x-0 bg-gold-500 transition-transform duration-500 group-hover:scale-x-100"></div>
+          )}
+        </article>
+      ))}
+    </div>
+
+    <div class="mt-14 flex flex-col items-center gap-4 reveal">
+      <p class="text-sm text-ink-800/70">¿No está seguro cuál necesita?</p>
+      <a href={whatsappLink('Hola Jeimy, no estoy seguro cuál servicio contable necesito. ¿Me ayudas?')} target="_blank" rel="noopener" class="btn-primary">
+        Diagnóstico gratuito por WhatsApp
+      </a>
+    </div>
+  </div>
+</section>

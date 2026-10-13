@@ -1,0 +1,87 @@
+---
+import { whatsappLink } from '../lib/site';
+
+const segmentos = [
+  {
+    tag: 'Empresas',
+    sub: 'Pymes y medianas',
+    pain: 'Riesgo, control, cumplimiento e impuestos altos.',
+    anchors: ['Revisoría fiscal', 'NIIF', 'Auditoría', 'CFO por horas'],
+    message: 'Control independiente y estrategia financiera que protegen su empresa y su rentabilidad.',
+    photo: '/images/jeimy-full-body.webp',
+    cta: 'Hola Jeimy, soy gerente de una empresa y necesito asesoría.',
+  },
+  {
+    tag: 'Personas de alto patrimonio',
+    sub: 'Familias e inversionistas',
+    pain: 'Carga tributaria, orden patrimonial y acceso a crédito.',
+    anchors: ['Planeación tributaria', 'Valoración', 'Estructuración patrimonial'],
+    message: 'Su patrimonio: organizado, optimizado y protegido legalmente.',
+    photo: '/images/jeimy-office-wide.webp',
+    cta: 'Hola Jeimy, me gustaría asesoría personal patrimonial.',
+  },
+  {
+    tag: 'Independientes',
+    sub: 'Microempresa y profesionales',
+    pain: 'Desorden contable, miedo a la DIAN y acceso a crédito.',
+    anchors: ['Contabilidad', 'Impuestos', 'Saneamiento', 'Crédito'],
+    message: 'Ponemos en orden sus finanzas y lo preparamos para crecer y acceder a crédito.',
+    photo: '/images/jeimy-portrait.webp',
+    cta: 'Hola Jeimy, soy independiente y necesito ordenar mis finanzas.',
+  },
+];
+---
+<section id="para-quien" class="relative py-24 md:py-32">
+  <div class="container-x">
+    <div class="max-w-3xl reveal">
+      <span class="eyebrow">Para quién trabajo</span>
+      <h2 class="mt-5 h-section text-ink-950">
+        Tres perfiles, un mismo
+        <span class="italic text-gold-600">compromiso</span>
+      </h2>
+      <p class="mt-5 text-ink-800/80">
+        Cada segmento tiene su propio lenguaje, sus propios dolores y su propia hoja de ruta.
+        Si usted se reconoce en alguno, hablemos.
+      </p>
+    </div>
+
+    <div class="mt-14 grid gap-8 lg:grid-cols-3">
+      {segmentos.map((s, i) => (
+        <article class="reveal relative overflow-hidden rounded-[1.5rem] border border-ink-900/10 bg-white transition-all duration-500 hover:-translate-y-1 hover:shadow-soft">
+          <div class="relative aspect-[4/5] overflow-hidden">
+            <img src={s.photo} alt={s.tag} loading="lazy" class="h-full w-full object-cover object-top transition-transform duration-700 hover:scale-105" />
+            <div class="absolute inset-0 bg-gradient-to-t from-ink-950/80 via-ink-950/10 to-transparent"></div>
+            <div class="absolute left-5 top-5 inline-flex items-center gap-2 rounded-full bg-paper-50/95 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.22em] text-gold-700">
+              {`0${i + 1}`} · {s.sub}
+            </div>
+            <div class="absolute left-5 right-5 bottom-5 text-paper-50">
+              <h3 class="font-serif text-2xl leading-tight">{s.tag}</h3>
+              <p class="mt-1 text-xs uppercase tracking-[0.22em] text-gold-300">{s.sub}</p>
+            </div>
+          </div>
+
+          <div class="p-6">
+            <p class="text-[11px] font-semibold uppercase tracking-[0.2em] text-gold-600">Dolor principal</p>
+            <p class="mt-2 text-sm text-ink-900">{s.pain}</p>
+
+            <p class="mt-5 text-[11px] font-semibold uppercase tracking-[0.2em] text-gold-600">Servicios ancla</p>
+            <div class="mt-2 flex flex-wrap gap-1.5">
+              {s.anchors.map((a) => (
+                <span class="rounded-full border border-ink-900/10 bg-paper-100 px-3 py-1 text-xs text-ink-800">{a}</span>
+              ))}
+            </div>
+
+            <blockquote class="mt-5 border-l-2 border-gold-500 pl-4 font-serif text-base italic leading-snug text-ink-950">
+              “{s.message}”
+            </blockquote>
+
+            <a href={whatsappLink(s.cta)} target="_blank" rel="noopener" class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-gold-700 hover:text-gold-500">
+              Agendar diagnóstico
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

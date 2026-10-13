@@ -1,0 +1,112 @@
+---
+const sectores = [
+  {
+    sector: 'Construcción · Obras civiles · Interventorías · Consultorías',
+    clientes: [
+      'SILEX INGENIERÍA S.A.S.',
+      'Consorcio Alianza Arcabuco',
+      'U.T. SILEXKHA 2023',
+      'Consorcio Alianza Paipa',
+      'Consorcio Consultoría Arcabuco',
+      'Consorcio El Peñón 7',
+    ],
+  },
+  {
+    sector: 'Servicios profesionales',
+    clientes: [
+      'Strategia Consultoría e Innovación S.A.S.',
+      'Técnica Diésel del Llano S.A.S.',
+      'ISMANT S.A.S.',
+      'Finanservices',
+    ],
+  },
+  {
+    sector: 'Comercio y agroindustria',
+    clientes: ['Agropecuaria Hacienda Maní S.A.S.'],
+  },
+];
+
+const testimonios = [
+  {
+    cita:
+      'Trabajar con Jeimy nos dio algo que no teníamos: tranquilidad. Dejamos de correr a última hora con las obligaciones tributarias y empezamos a tomar decisiones con información clara y a tiempo. Más que una contadora, se volvió una aliada de nuestro negocio.',
+    autor: 'Miguel García',
+    cargo: 'Gerente · SILEX Ingeniería S.A.S.',
+    sector: 'Construcción',
+  },
+  {
+    cita:
+      'Lo que más valoro de Jeimy es que me explica las cosas en un lenguaje que entiendo, sin tecnicismos. Siempre está un paso adelante avisándome de fechas, riesgos y oportunidades. Su trabajo es impecable y su acompañamiento, constante.',
+    autor: 'Leonardo Silva',
+    cargo: 'Gerente · Finanservices',
+    sector: 'Servicios financieros',
+  },
+  {
+    cita:
+      'En Strategia trabajamos con organizaciones que no pueden permitirse errores en lo contable y tributario, y por eso confiamos en Jeimy Silva. Su rigor, su cumplimiento y su capacidad de anticiparse nos dan la tranquilidad de concentrarnos en lo estratégico sabiendo que las finanzas están en manos expertas.',
+    autor: 'Edward Salazar',
+    cargo: 'Gerente · Strategia Consultoría e Innovación',
+    sector: 'Consultoría estratégica',
+  },
+];
+---
+<section id="clientes" class="relative py-24 md:py-32 bg-paper-50">
+  <div class="container-x">
+    <div class="max-w-3xl reveal">
+      <span class="eyebrow">Confían en Jeimy</span>
+      <h2 class="mt-5 h-section text-ink-950">
+        Empresas y proyectos que ya trabajan con
+        <span class="italic text-gold-600">rigor y resultados</span>
+      </h2>
+      <p class="mt-5 text-ink-800/80">
+        Experiencia sectorial comprobada en construcción, servicios, consultoría y agroindustria.
+        Cada marca abajo es un cliente real, con operación activa.
+      </p>
+    </div>
+
+    <!-- clientes por sector -->
+    <div class="mt-14 grid gap-6 lg:grid-cols-3">
+      {sectores.map((s) => (
+        <div class="reveal rounded-2xl border border-ink-900/10 bg-white p-6">
+          <p class="text-[11px] font-semibold uppercase tracking-[0.2em] text-gold-600">{s.sector}</p>
+          <ul class="mt-4 space-y-2">
+            {s.clientes.map((c) => (
+              <li class="flex items-start gap-3 text-sm text-ink-900">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.6" viewBox="0 0 24 24" class="mt-1.5 shrink-0 text-gold-600"><circle cx="12" cy="12" r="2"/></svg>
+                <span class="font-serif tracking-tight">{c}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+
+    <!-- Testimonios -->
+    <div class="mt-24">
+      <div class="max-w-3xl reveal">
+        <span class="eyebrow">Testimonios</span>
+        <h3 class="mt-5 font-serif text-3xl md:text-4xl text-ink-950">
+          Lo que dicen quienes trabajan con Jeimy
+        </h3>
+      </div>
+
+      <div class="mt-10 grid gap-6 md:grid-cols-3">
+        {testimonios.map((t) => (
+          <figure class="reveal relative flex h-full flex-col rounded-2xl bg-white p-7 shadow-soft">
+            <svg aria-hidden="true" class="h-8 w-8 text-gold-500" viewBox="0 0 32 32" fill="currentColor">
+              <path d="M12 10c-3.3 0-6 2.7-6 6v8h8v-8H8c0-2.2 1.8-4 4-4V10zm14 0c-3.3 0-6 2.7-6 6v8h8v-8h-6c0-2.2 1.8-4 4-4V10z" opacity=".85"/>
+            </svg>
+            <blockquote class="mt-4 flex-1 font-serif text-lg leading-snug text-ink-900">
+              {t.cita}
+            </blockquote>
+            <figcaption class="mt-6 border-t border-ink-900/10 pt-4">
+              <p class="font-serif text-base text-ink-950">{t.autor}</p>
+              <p class="text-xs text-ink-800/70">{t.cargo}</p>
+              <p class="mt-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-gold-600">{t.sector}</p>
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
