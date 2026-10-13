@@ -25,17 +25,34 @@ const canonical = new URL(Astro.url.pathname, site.url).toString();
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="author" content={site.fullName} />
+    <meta name="keywords" content="contadora pública, revisoría fiscal, auditoría forense, gerencia financiera, planeación tributaria, NIIF, declaración de renta, contabilidad empresas, Boyacá, Casanare, Cundinamarca, Yopal, Tunja, Jeimy Silva, contador Colombia" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+    <meta name="googlebot" content="index, follow" />
     <link rel="canonical" href={canonical} />
+    <link rel="sitemap" type="application/xml" href="/sitemap-index.xml" />
 
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={site.name} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={site.url} />
     <meta property="og:image" content={`${site.url}/images/jeimy-portrait.webp`} />
+    <meta property="og:image:width" content="1024" />
+    <meta property="og:image:height" content="1280" />
+    <meta property="og:image:alt" content="Jeimy Silva, Contadora Pública · T.P. 264278-T JCC" />
     <meta property="og:locale" content="es_CO" />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={`${site.url}/images/jeimy-portrait.webp`} />
 
     <meta name="theme-color" content="#0A0A0B" />
+    <meta name="geo.region" content="CO" />
+    <meta name="geo.placename" content="Colombia · Boyacá, Casanare, Cundinamarca" />
+    <meta name="language" content="Spanish" />
+
+    <!-- Google Search Console verification (reemplazar cuando GSC lo pida) -->
+    <!-- <meta name="google-site-verification" content="REEMPLAZAR_CON_CODIGO_GSC" /> -->
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -46,30 +63,71 @@ const canonical = new URL(Astro.url.pathname, site.url).toString();
 
     <script type="application/ld+json" set:html={JSON.stringify({
       '@context': 'https://schema.org',
-      '@type': 'ProfessionalService',
+      '@type': ['ProfessionalService', 'AccountingService', 'LocalBusiness'],
+      '@id': `${site.url}#business`,
       name: site.fullName,
-      alternateName: 'Jeimy Silva Contadora',
+      alternateName: ['Jeimy Silva Contadora', 'Jeimy Silva CP'],
       description: site.pitch,
       url: site.url,
-      image: `${site.url}/images/jeimy-portrait.webp`,
+      image: [
+        `${site.url}/images/jeimy-portrait.webp`,
+        `${site.url}/images/jeimy-office-wide.webp`,
+        `${site.url}/images/jeimy-desk.webp`,
+      ],
+      logo: `${site.url}/favicon.svg`,
       telephone: '+57 310 858 9523',
       email: site.email,
-      areaServed: ['Boyacá', 'Casanare', 'Cundinamarca', 'Colombia'],
-      address: { '@type': 'PostalAddress', addressCountry: 'CO' },
+      priceRange: '$$',
+      currenciesAccepted: 'COP',
+      paymentAccepted: ['Transferencia bancaria', 'PSE', 'Efectivo'],
+      areaServed: [
+        { '@type': 'State', name: 'Boyacá', containedInPlace: { '@type': 'Country', name: 'Colombia' } },
+        { '@type': 'State', name: 'Casanare', containedInPlace: { '@type': 'Country', name: 'Colombia' } },
+        { '@type': 'State', name: 'Cundinamarca', containedInPlace: { '@type': 'Country', name: 'Colombia' } },
+        { '@type': 'Country', name: 'Colombia' },
+      ],
+      serviceType: [
+        'Revisoría Fiscal',
+        'Auditoría Forense',
+        'Auditoría Financiera',
+        'Gerencia Financiera',
+        'Planeación Tributaria',
+        'Contabilidad NIIF',
+        'Declaración de Renta',
+        'Saneamiento Financiero',
+        'CFO por horas',
+      ],
+      address: {
+        '@type': 'PostalAddress',
+        addressCountry: 'CO',
+        addressRegion: 'Casanare',
+      },
       founder: {
         '@type': 'Person',
         name: site.fullName,
         jobTitle: 'Contadora Pública',
-        hasCredential: 'Tarjeta Profesional 264278-T · JCC',
+        hasCredential: {
+          '@type': 'EducationalOccupationalCredential',
+          credentialCategory: 'Professional License',
+          name: 'Tarjeta Profesional 264278-T · Junta Central de Contadores de Colombia',
+        },
       },
-      makesOffer: [
-        'Revisoría Fiscal',
-        'Auditoría Forense',
-        'Gerencia Financiera',
-        'Planeación tributaria',
-        'Contabilidad bajo NIIF',
-        'Saneamiento financiero',
-      ],
+      sameAs: [site.url],
+      openingHoursSpecification: {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+        opens: '08:00',
+        closes: '18:00',
+      },
+    })} />
+
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      url: site.url,
+      name: site.name,
+      inLanguage: 'es-CO',
+      publisher: { '@id': `${site.url}#business` },
     })} />
   </head>
   <body class="relative antialiased">
